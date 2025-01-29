@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family:'Gill Sans', 'Gill Sans MT';
+}
+
+:root {
+    --background :rgb(24,24,24) ;
+    --secondBackground: rgb(20,20,20);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2em 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(15,15,15,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+ul{
+   display: flex;
+   align-items: center; 
+   gap: 3rem;
+}
+
+nav ul a{
+    color: white;
+    opacity: 0.7;
+    transition: 0.2 ease-in-out;
+}
+
+nav ul a:hover {
+    opacity: 1;
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    font-weight: 800;
+    opacity: 0.8;
+    transition: 0.2 ease-in-out;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3 ease-in-out;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--background);
+}
+
+span {
+    background: linear-gradient(to right , rgb(0, 230, 0),rgb(20, 225, 225));
+    background-clip: text;
+    color: transparent;
+}
+
+section {
+    min-height: 100vh;
+    padding: 5% 15%;
+}
+
+#Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: white;
+}
+
+#Home img {
+    width: 26vh;
+    border-radius: 50%;
+    margin-top: 3em;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+    max-width: 600px;
+}
+
+.info-box h1 {
+    font-size: 5em;
+    font-weight: 500;
+}
+
+.info-box h3 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.info-box p {
+    opacity: 0.7;
+}
+
+.btn-box {
+    display: flex;
+    gap: 1em;
+}
+
+.btn-box .btn:nth-of-type(2) {
+    background-color: white;
+    color: var(--background);
+}
+
+.btn-box .btn:nth-of-type(2):hover {
+    background-color:  var(--background);
+    color: white;
+}
+
+#About {
+    background-color: var(--secondBackground);
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+#About img {
+    width: 30vw;
+    border-radius: 1em;
+}
+
+.about-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+}
+
+.about-box h1{
+    font-size: medium;
+}
+
+.about-box p{
+    color: white;
+    opacity: 0.8;
+}
+
+.skills {
+    display: flex;
+    text-align: left;
+    gap: 10em;
+}
+
+.skills ul {
+    font-size: 1.3em;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    opacity: 0.8;
+    align-items: baseline;
+}
+
+.skills ul li span{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.2em;
+    transition: 0.3 ease-in-out;
+    cursor: pointer;
+}
+
+.skills ul li span:hover{
+transform: translateX(10px)
+}
+
+.about-box h2{
+    font-size: 2.5em;
+}
+
+#Contact {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+form .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.input-box span {
+    font-size: 1.5em;
+}
+
+form input{
+    font-size: 1.3;
+    padding: 1em 5em;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
+
+form input:focus{
+    background: white;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    bottom: 0;
+    background-color: var(--secondBackground);
+    width: 100%;
+    padding: 5em 15%;
+}
+
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.col-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.col-box i{
+    font-size: 2em;
+}
+
+.col-box span {
+    font-size: 1.2em;
+}
+
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    max-width: 500px;
+}
+
+.col-right span{
+    font-size: 1.3em;
+}
+
+.col-right .social {
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    gap: 1em;
+}
+
+.col-right .social i{
+    font-size: 2em;
+    transition: 0.2 ease-in-out;
+    cursor: pointer;
+}
+
+.col-right .social i:hover {
+    color: white;
+}
