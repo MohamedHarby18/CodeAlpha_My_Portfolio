@@ -5,121 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Harby Portfolio</title>
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="Assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="#" class="Logo"><span>Mohamed Harby</span></a>
+        <a href="#Home" class="logo"><span>Mohamed Harby</span></a>
         <ul>
-            <a href="#Home">Home</a>
-            <a href="#About">About</a>
-            <a href="#Contact">Contact</a>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#projects">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
         <a href="#Contact" class="btn">Contact Me</a>
     </nav>
 
+    <!-- Home Section -->
     <section id="Home">
-        <img src="Assets/Imges/Mohamed Harby_2.jpg">
+        <img src="Assets/Imges/Mohamed Harby.jpg" alt="Mohamed Harby">
 
         <div class="info-box">
-            <h1><span>Hello , I'm Mohamed Harby</span></h1>
-            <h3><span>computer science Student</span> at Helwan university <br>
-                <p>
-                    Computer Science Student at FCAI-H with a 3.05/4.0 GPA,
-                    Competitive Programmer
-                    and Video Member at 180 Daraga
-                </p>
+            <h1><span>Hello, I'm Mohamed Harby</span></h1>
+            <h3>
+                <span>Computer Science Student</span> at Helwan University
             </h3>
+            <p>
+                I am a Computer Science student at Helwan University, specializing in backend development with .NET
+                technologies. I combine a solid foundation in web development with a passion for creating efficient
+                solutions that meet your needs and expectations.
+            </p>
         </div>
-
         <div class="btn-box">
-            <div class="btn">Hire</div>
-            <div class="btn">Contact Me</div>
+            <div class="btn">Download Resume</div>
+            <div class="btn">View projects</div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="About">
         <div class="about-box">
             <div class="about-info">
                 <h1><span>About Me</span></h1>
-                <p>Computer Science Student at FCAI-H ,Video Member at 180 Daraga and problem solving trainee at level 2
-                    in ICPC Helwan.</p>
+                <p>
+                    Computer Science Student at FCAI-H, Video Team Member at 180 Daraga,
+                    and Problem-Solving trainee (Level 2) at ICPC Helwan.
+                </p>
             </div>
+
             <div class="skills">
                 <ul>
-                    <li>
-                        <span> <i class="fa-solid fa-chevron-right"> </i> Problem Solving</span>
-                    </li>
-                    <li>
-                        <span> <i class="fa-solid fa-chevron-right"> </i>Video prododuction</span>
-                    </li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Problem Solving</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> Video Production</li>
                 </ul>
                 <ul>
-                    <li>
-                        <span> <i class="fa-solid fa-chevron-right"> </i>SQL</span>
-                    </li>
-                    <li>
-                        <span> <i class="fa-solid fa-chevron-right"> </i>HTML & CSS & JS</span>
-                    </li>
+                    <li><i class="fa-solid fa-chevron-right"></i> SQL</li>
+                    <li><i class="fa-solid fa-chevron-right"></i> HTML, CSS & JavaScript</li>
                 </ul>
             </div>
         </div>
-        <img src="Assets/Imges/Mohamed Harby.jpg" alt="">
+        <img src="Assets/Imges/Mohamed Harby_2.jpg" alt="Mohamed Harby">
     </section>
 
+    <!-- Contact Section -->
     <section id="Contact">
         <h1 class="header"><span>Contact</span></h1>
-        <form action="#">
+        <form action="#" method="post">
             <div class="input-box">
-                <span>Full Name</span>
-                <input type="text" placeholder="Enter Your Full Name">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter Your Full Name" required>
             </div>
             <div class="input-box">
-                <span>Email</span>
-                <input type="text" placeholder="Enter Your Email">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter Your Email" required>
             </div>
             <div class="input-box">
-                <span>Your message</span>
-                <input type="text" placeholder="Enter Your message">
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Enter Your Message" required></textarea>
             </div>
-            <div class="btn">Submint</div>
+            <button type="submit" class="btn">Submit</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="col-left">
             <div class="col-box">
-                <span><i class="fa-solid fa-location-dot"></i></span>
-                <span>Cairo-Egpyt</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Cairo, Egypt</span>
             </div>
 
             <div class="col-box">
-                <span><i class="fa-regular fa-envelope"></i></span>
+                <i class="fa-regular fa-envelope"></i>
                 <span>mohemadharby3@gmail.com</span>
             </div>
+
             <div class="col-box">
-                <span><i class="fa-solid fa-phone"></i></span>
-                <span>010******32</span>
+                <i class="fa-solid fa-phone"></i>
+                <span>+20 10******32</span>
             </div>
         </div>
+
         <div class="col-right">
-            <span>About me</span>
+            <h3>About Me</h3>
             <p>
-                computer science Student at Helwan university
-                Computer Science Student at FCAI-H with a 3.05/4.0 GPA, Competitive Programmer and Video Member at 180
-                Daraga
+                Computer Science Student at Helwan University,
+                GPA: 3.05/4.0, Competitive Programmer,
+                and Video Team Member at 180 Daraga.
             </p>
             <div class="social">
-                <span><i class="fa-brands fa-facebook-f"></i></i></span>
-                <span><i class="fa-brands fa-instagram"></i></span>
-                <span><i class="fa-brands fa-linkedin-in"></i></span>
-                <span><i class="fa-brands fa-github"></i></span>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
             </div>
+        </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="Assets/javaScript.js"></script>
 </body>
 
