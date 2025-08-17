@@ -66,21 +66,24 @@ nav ul li a:hover {
 
 /* Buttons */
 .btn {
-    padding: 0.6em 1.2em;
-    color: white;
-    font-weight: 500;
-    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0.8em 2em;
     border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid white;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    background-color: transparent;
+    color: white;
     cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1em;
     transition: all 0.3s ease-in-out;
-    background: transparent;
 }
 
 .btn:hover {
     background-color: white;
-    color: var(--background);
+    color: var(--secondBackground);
 }
 
 /* Accent Text */
@@ -135,72 +138,130 @@ section {
     line-height: 1.6em;
 }
 
-/* About Section */
-#About {
-    background-color: var(--secondBackground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5em;
-    flex-wrap: wrap;
-    padding: 8% 15%;
+/* ---------------- Projects Section ---------------- */
+#projects {
+    padding: 80px 10%;
+    background: var(--secondBackground);
+    text-align: center;
 }
 
-#About img {
-    width: 30vw;
-    border-radius: 1em;
-    min-width: 250px;
+#projects .header {
+    font-size: 2rem;
+    margin-top: 20px;
 }
 
-.about-box {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    max-width: 600px;
-    text-align: left;
+.projects-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 80px;
 }
 
-.about-box h1 {
-    font-size: 2.2em;
+.project-card {
+    background: var(--background);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px;
 }
 
-.about-box p {
-    color: white;
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+    background: var(--accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--white);
     opacity: 0.8;
-    line-height: 1.6em;
+    padding: 0 15px;
+    margin-bottom: 15px;
 }
 
-.skills {
-    display: flex;
-    gap: 5em;
-    flex-wrap: wrap;
+
+
+.project-card .btn:hover {
+    background: white;
 }
 
-.skills ul {
-    font-size: 1.2em;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8em;
-    color: white;
-    opacity: 0.9;
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.skills ul li {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+/* ---------------- Skills Section ---------------- */
+#skills {
+    padding: 60px 10%;
+    background: var(--background);
+    text-align: center;
 }
 
-.skills ul li:hover {
-    transform: translateX(8px);
+#skills .header {
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #222;
 }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 35px;
+}
+
+.skill-card {
+    margin-top: 50px;
+    background: var(--secondBackground);
+    border-radius: 15px;
+    padding: 25px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card i {
+    font-size: 2rem;
+    background: var(--accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    background: var(--accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.skill-card p {
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.8;
+    line-height: 1.4em;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 
 /* Contact Section */
 #Contact {
-    background-color: var(--background);
+    background-color: var(--secondBackground);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -260,7 +321,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     gap: 4em;
-    background-color: var(--secondBackground);
+    background-color: var(--background);
     width: 100%;
     padding: 4em 15%;
     flex-wrap: wrap;
