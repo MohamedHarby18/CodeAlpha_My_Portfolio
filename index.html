@@ -38,7 +38,7 @@
             </p>
         </div>
         <div class="btn-box">
-            <a href="Assets/Imges/Mohamed Harby CV.pdf" class="btn" download>Download Resume</a>
+            <a href="Assets/Imges/Mohamed Harby Backend.net.pdf" class="btn" download>Download Resume</a>
             <a href="#projects" class="btn">View Projects</a>
         </div>
     </section>
@@ -46,31 +46,54 @@
     <!-- Projects Section -->
     <section id="projects">
         <h1 class="header"><span>Projects</span></h1>
-        <div class="projects-box">
-            <div class="project-card">
+
+        <!-- Search and Filter -->
+        <div class="search-filter-container">
+            <input type="text" id="projectSearch" class="search-box" placeholder="Search projects by title...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="games">Games</button>
+            </div>
+        </div>
+
+        <div class="projects-box" id="projectsContainer">
+            <div class="project-card" data-category="frontend" data-title="Next Chapter">
                 <img src="Assets/Imges/Next Chapter logo.jpg" alt="Next Chapter">
                 <h3>Next Chapter</h3>
                 <p>Developed an online bookstore using Bootstrap and UML methodologies—
                     designed and implemented key features including a responsive layout, product
                     catalog, and user navigation flow.</p>
-                <a href="https://github.com/MohamedHarby18/Book_Store" class="btn">View Project</a>
+                <div class="card-buttons">
+                    <a href="https://github.com/MohamedHarby18/Book_Store" class="btn">View Project</a>
+                    <button class="btn-modal" onclick="openProjectModal(this)">Details</button>
+                </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-category="fullstack" data-title="Art Gallery">
                 <img src="Assets/Imges/product-1.jpg" alt="Art Gallery">
                 <h3>Art Gallery</h3>
                 <p>Developed a full-stack e-commerce platform for art sales using HTML, CSS,
                     JavaScript, and Bootstrap (frontend) with PHP and MySQL (backend).
                     Implemented secure authentication, responsive design, and CRUD
                     functionality for artworks and users.</p>
-                <a href="https://github.com/MohamedHarby18/Art_Gallery" class="btn">View Project</a>
+                <div class="card-buttons">
+                    <a href="https://github.com/MohamedHarby18/Art_Gallery" class="btn">View Project</a>
+                    <button class="btn-modal" onclick="openProjectModal(this)">Details</button>
+                </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-category="frontend" data-title="Image Gallery">
                 <img src="Assets/Imges/BMW 320i 2024.jpg" alt="Image Gallery">
                 <h3>Image Gallery</h3>
                 <p>Image Gallery website using HTML, CSS, JS</p>
-                <a href="https://github.com/MohamedHarby18/CodeAlpha_ImageGallery" class="btn">View Project</a>
+                <div class="card-buttons">
+                    <a href="https://github.com/MohamedHarby18/CodeAlpha_ImageGallery" class="btn">View Project</a>
+                    <button class="btn-modal" onclick="openProjectModal(this)">Details</button>
+                </div>
             </div>
         </div>
     </section>
@@ -115,22 +138,44 @@
     <!-- Contact Section -->
     <section id="Contact">
         <h1 class="header"><span>Contact</span></h1>
-        <form action="#">
+        <form id="contactForm" action="https://formspree.io/f/xjgjzzra" method="POST">
             <div class="input-box">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter Your Full Name" required>
+                <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+                <span class="error-message" id="nameError"></span>
             </div>
             <div class="input-box">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                <span class="error-message" id="emailError"></span>
             </div>
             <div class="input-box">
                 <label for="message">Your Message</label>
-                <textarea id="message" placeholder="Enter Your Message" required></textarea>
+                <textarea id="message" name="message" placeholder="Enter Your Message" required></textarea>
+                <span class="error-message" id="messageError"></span>
             </div>
             <button type="submit" class="btn">Submit</button>
+            <div class="form-messages">
+                <div class="success-message" id="successMessage">✓ Message sent successfully!</div>
+                <div class="error-message" id="formError"></div>
+            </div>
         </form>
     </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProjectModal()">&times;</span>
+            <img id="modalImg" src="" alt="Project Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalCategory" class="modal-category"></p>
+            <p id="modalDescription"></p>
+            <div class="modal-buttons">
+                <a id="modalGithubLink" href="#" class="btn" target="_blank">View on GitHub</a>
+                <button class="btn" onclick="closeProjectModal()">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -155,7 +200,7 @@
             <h3>About Me</h3>
             <p>
                 Computer Science Student at Helwan University,
-                GPA: 3.05/4.0, Competitive Programmer,
+                GPA: 2.95/4.0, Competitive Programmer,
                 and Video Team Member at 180 Daraga.
             </p>
             <div class="social">

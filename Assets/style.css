@@ -380,3 +380,382 @@ footer {
 .col-right .social a:hover {
     color: white;
 }
+
+/* -------- Search & Filter Section -------- */
+.search-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 2em 0;
+    align-items: center;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8em 1.2em;
+    border-radius: 0.5em;
+    border: 2px solid rgb(0, 230, 0);
+    background-color: var(--background);
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 230, 0, 0.5);
+    border-color: rgb(20, 225, 225);
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.6em 1.2em;
+    border-radius: 0.5em;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: white;
+    color: var(--secondBackground);
+    transform: scale(1.05);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    background-clip: text;
+    border-color: rgb(0, 230, 0);
+    -webkit-background-clip: text;
+    color: transparent;
+    border-width: 2px;
+}
+
+/* -------- Project Card Buttons -------- */
+.card-buttons {
+    display: flex;
+    gap: 0.8em;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-modal {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    border-radius: 0.5em;
+    border: 2px solid rgb(20, 225, 225);
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.btn-modal:hover {
+    background-color: rgb(20, 225, 225);
+    color: var(--background);
+}
+
+/* -------- Modal Styling -------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: var(--secondBackground);
+    padding: 2em;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+}
+
+.modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    background: var(--accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.modal-category {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    border-radius: 0.3em;
+    background-color: var(--background);
+    color: rgb(0, 230, 0);
+    font-weight: 600;
+    font-size: 0.85em;
+    margin-bottom: 1em;
+}
+
+.modal-content p {
+    font-size: 1em;
+    opacity: 0.85;
+    line-height: 1.6em;
+    margin-bottom: 1.5em;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close:hover {
+    color: rgb(0, 230, 0);
+    transform: scale(1.2);
+}
+
+/* -------- Form Messages -------- */
+.form-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    margin-top: 1em;
+}
+
+.success-message {
+    display: none;
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: rgba(0, 230, 0, 0.1);
+    border-left: 4px solid rgb(0, 230, 0);
+    color: rgb(0, 230, 0);
+    font-weight: 600;
+    animation: slideDown 0.3s ease;
+}
+
+.success-message.active {
+    display: block;
+}
+
+.error-message {
+    display: none;
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 4px solid #ff6b6b;
+    color: #ff6b6b;
+    font-weight: 600;
+    font-size: 0.9em;
+    animation: slideDown 0.3s ease;
+}
+
+.error-message.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+form .error-message {
+    display: block;
+    padding: 0.4em 0;
+    border: none;
+    background-color: transparent;
+    border-left: none;
+    margin-top: -0.4em;
+    font-size: 0.85em;
+}
+
+form .error-message.active {
+    display: block;
+    color: #ff6b6b;
+}
+
+/* -------- Active Nav Highlighting -------- */
+nav ul li a.active {
+    opacity: 1;
+    color: rgb(0, 230, 0);
+    border-bottom: 2px solid rgb(0, 230, 0);
+    padding-bottom: 0.3em;
+}
+
+/* -------- Typing Animation -------- */
+.typing-animation {
+    border-right: 3px solid rgb(0, 230, 0);
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-right-color: rgb(0, 230, 0);
+    }
+
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+/* -------- Fade-in Animation -------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+/* -------- Responsive Design -------- */
+@media (max-width: 768px) {
+    nav {
+        padding: 1.5em 5%;
+    }
+
+    section {
+        padding: 6% 5%;
+    }
+
+    .search-filter-container {
+        gap: 1em;
+    }
+
+    .filter-buttons {
+        gap: 0.5em;
+    }
+
+    .filter-btn {
+        padding: 0.5em 0.8em;
+        font-size: 0.9em;
+    }
+
+    .projects-box {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5em;
+    }
+
+    .card-buttons {
+        gap: 0.6em;
+    }
+
+    .btn-modal {
+        padding: 0.5em 1em;
+        font-size: 0.85em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .info-box h1 {
+        font-size: 2.5em;
+    }
+
+    .info-box h3 {
+        font-size: 1.3em;
+    }
+}
